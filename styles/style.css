@@ -73,7 +73,7 @@ header .icons .fa-magnifying-glass {
 }
 
 /* info */
-.info {
+body > .info {
     padding: var(--padding);
 }
 .info .metadata .hashtags {
@@ -92,16 +92,24 @@ header .icons .fa-magnifying-glass {
 
 .info .metadata .titleAndBtn .title {
     font-size: var(--font-medium);
+     margin-right: var(--padding);
+}
+
+.info .metadata .titleAndBtn .title.clamp{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
      overflow: hidden;
-     margin-right: var(--padding);
+}
+
+.info .metadata .titleAndBtn .moreBtn.clicked {
+    transform: rotate(180deg)
 }
 
 .info .metadata .titleAndBtn .moreBtn {
     /* button이 위로 가게 하기 위해 height: 100% 줌*/
     height: 100%;
+    transition: transform 360ms ease-in-out;
 }
 
 .info .views {
@@ -111,8 +119,123 @@ header .icons .fa-magnifying-glass {
 
 .info .actions {
     display: flex;
+    justify-content: space-around;
+    padding: var(--padding) 0;
 }
 
+.info .actions li {
+   
+}
 
+.info .actions button {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-small);
+    color: var(--grey-dark-color)
+}
 
+.info .actions button i {
+    margin: 0 auto; /* 양 옆을 auto로 하면 중간으로 온다*/
+    margin-bottom: calc(var(--padding) / 2);
+    font-size: 16px;
+}
+
+.info .actions button i.active {
+    color: var(--blue-color);
+}
+
+.info .channel {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--grey-light-color);
+    border-bottom: 1px solid var(--grey-light-color);
+}
+
+.info .channel .metadata {
+    display: flex;
+    align-items: center;
+}
+
+.info .channel .metadata .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.info .channel .metadata img {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: 50%;
+}
+
+.info .channel .metadata .info .name{
+    font-size: var(--font-medium);
+}
+
+.info .channel .metadata .info .subscribers {
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+
+.info .channel .subscribe {
+    text-transform: uppercase;
+    color: var(--red-color);
+    font-size: var(--font-medium);
+}
+
+/* up next */
+.upNext {
+    padding: var(--padding);
+}
+/* '>' 바로 따라오는 노드만 선택 */
+.upNext > .title {
+    font-size: var(--font-medium);
+    color: var(--grey-dark-color);
+    margin-bottom: calc(var(--padding) / 2);
+}
+
+.upNext .item {
+    display: flex;
+    margin-top: var(--padding);
+}
+/* flex : 늘어날때, 줄어들때, base%*/
+.upNext .item .img {
+    flex: 1 1 35%;
+    margin-right: var(--padding);
+}
+
+.upNext .item .img img{
+    width: 100%;
+}
+
+.upNext .item .info {
+    flex: 1 1 60%;
+    display: flex;
+    flex-direction: column;
+}
+.upNext .item .moreBtn {
+    flex: 1 1 5%;
+    height: 100%;
+}
+
+.upNext .item .info .title {
+    font-size: var(--font-small);
+}
+.upNext .item .info .name, 
+.upNext .item .info .views {
+    font-size: var(--fong-micoro);
+    color: var(--grey-dark-color);
+}
+
+.infoAndUpNext {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+    .infoAndUpNext {
+        display: flex;
+        flex-direction: row;
+        margin-top: var(--padding);
+    }
+}
 
