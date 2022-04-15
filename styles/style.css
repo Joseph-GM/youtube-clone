@@ -1,0 +1,118 @@
+:root {
+    /* Color*/
+    --white-color: #f9f9f9;
+    --black-color: #030303;
+    --blue-color: #045fd4;
+    --red-color: #ff0200;
+    --grey-dark-color: #909090;
+    --grey-light-color: #e0e0e0;
+    /* Size */
+    --padding: 12px;
+    --avatar-size: 36px;
+
+    /* Font Size */
+    --font-large: 18px;
+    --font-medium: 14px;
+    --font-small: 12px;
+    --fong-micoro: 10px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto'; 
+}
+
+ul {
+    list-style: none;
+}
+
+button, button:focus {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+header {
+    background-color: var(--black-color);
+    display: flex;
+    justify-content: space-between;
+    color: var(--white-color);
+    /* font-size: var(--font-large); */
+    padding: var(--padding)
+}
+
+header .logo {
+    font-size: var(--font-large);
+}
+
+header .logo i {
+    color: var(--red-color);
+}
+header .icons .fa-magnifying-glass {
+    margin-right: var(--padding);
+}
+
+/* video player*/
+.player {
+    text-align: center;
+    background-color: var(--black-color);
+    position: sticky;
+    /* top 0를 해주어야 position sticky가 작동, 어디에 붙어 있어야 하는지 알려 줘야함*/
+    top: 0;
+}
+.player video{
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+}
+
+/* info */
+.info {
+    padding: var(--padding);
+}
+.info .metadata .hashtags {
+    display: flex;
+    color: var(--blue-color);
+    font-size: var(--font-small);
+}
+.info .metadata .hashtags li {
+    margin-right: var(--padding);
+    
+}
+
+.info .metadata .titleAndBtn {
+    display: flex;
+}
+
+.info .metadata .titleAndBtn .title {
+    font-size: var(--font-medium);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+     overflow: hidden;
+     margin-right: var(--padding);
+}
+
+.info .metadata .titleAndBtn .moreBtn {
+    /* button이 위로 가게 하기 위해 height: 100% 줌*/
+    height: 100%;
+}
+
+.info .views {
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+
+.info .actions {
+    display: flex;
+}
+
+
+
+
